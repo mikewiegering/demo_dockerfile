@@ -32,14 +32,16 @@ RUN terraform --version
 # Install python
 ################################
 
-# RUN apt-get install -y python3
-#RUN ln -s /usr/bin/python3 python
-RUN apt-get install iputils-ping
+RUN apt-get install -y python3
+RUN ln -s /usr/bin/python3 python
+RUN apt-get install iputils-ping -y
 #RUN installs ping
-RUN apt-get install curl
+RUN apt-get install curl -y
 #RUN installs curl
+
+RUN python3 
+RUN apt-get -y install python3-pip
 RUN pip3 install --upgrade pip
-RUN python3 -V
 RUN pip --version
 # install prep for pip
 RUN apt-get install -y build-essential 
@@ -53,12 +55,12 @@ RUN pip install python-dotenv
 # Install Git
 #################################
 
-RUN apt install -y git
-RUN git --version
+# RUN apt install -y git
+# RUN git --version
 
 ################################
 # Install Ping
 ###############################
 
 
-RUN apt-get install inetutils-ping
+
