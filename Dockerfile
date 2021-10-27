@@ -18,33 +18,32 @@ apt-get install vim -y
 
 # Install required packages
 
-RUN apt-get install -y gnupg software-properties-common curl
+# RUN apt-get install -y gnupg software-properties-common curl
 
-# Add the HashiCorp GPG key
+# # Add the HashiCorp GPG key
 
-RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+# RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 
-# Add offcial HashiCorp Linux repository
+# # Add offcial HashiCorp Linux repository
 
-RUN apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+# RUN apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
-RUN apt-get update
+# RUN apt-get update
 
-# Install Terraform
+# # Install Terraform
 
-RUN apt-get install terraform
+# RUN apt-get install terraform
 
 
 
 ## OLD Code  ##
 # Download terraform for linux
-# RUN wget https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip
-
+RUN wget https://releases.hashicorp.com/terraform/1.0.9/terraform_1.0.9_linux_amd64.zip
 # Unzip
-# RUN unzip terraform_0.13.5_linux_amd64.zip
+RUN unzip terraform_1.0.9_linux_amd64.zip
 
 # Move to local bin
-# RUN mv terraform /usr/local/bin/
+RUN mv terraform /usr/local/bin/
 
 # Check that it's installed
 RUN terraform --version 
