@@ -44,7 +44,7 @@ RUN apt-get install terraform
 # RUN unzip terraform_0.13.5_linux_amd64.zip
 
 # Move to local bin
-E RUN mv terraform /usr/local/bin/
+# RUN mv terraform /usr/local/bin/
 
 # Check that it's installed
 RUN terraform --version 
